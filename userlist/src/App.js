@@ -11,7 +11,8 @@ function App() {
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: "white",
-        height: "64px"
+        height: "64px",
+        boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)"
       }}>
         <GroupIcon fill='#2081C3'/>
         <header style={{fontSize: '18px', textTransform: 'uppercase', color: '#4A4A4A'}}>USERS</header>
