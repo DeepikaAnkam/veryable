@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import UserList from './UserList';
+import { ReactComponent as GroupIcon } from './icons/group.svg';
+import './index.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  return(
+    <div style={{backgroundColor: "#f1f5f6"}}>
+      <div style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: "white",
+        height: "64px"
+      }}>
+        <GroupIcon fill='#2081C3'/>
+        <header style={{fontSize: '18px', textTransform: 'uppercase', color: '#4A4A4A'}}>USERS</header>
+      </div>
+      <UserList/>
     </div>
-  );
+  )
+    
 }
 
 export default App;
