@@ -102,7 +102,11 @@ return (
             </p>
             <p>
                 <div style={{fontSize: '10px', fontWeight: 'bold'}}>Created At</div>
-                
+                <div style={{fontSize: '10px'}}>{getFormattedDate(new Date(createdAt))}</div>
+            </p>
+            <p>
+                <div style={{fontSize: '10px', fontWeight: 'bold'}}>Last Logged In</div>
+                <div style={{fontSize: '10px'}}>{getFormattedDate(new Date(lastLoggedIn))}</div>
             </p>
         </div>
 
