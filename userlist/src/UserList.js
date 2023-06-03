@@ -84,6 +84,12 @@ return (
         height: '190px',
         alignItems: 'center'
       }}>
+        <div style={{paddingLeft: '48px'}}>
+            <p>
+                <div style={{fontSize: '10px', fontWeight: 'bold'}}>Address</div>
+                <div style={{fontSize: '10px'}}>{`${street}, ${city}, ${state}, ${zip}`}</div>
+            </p>
+        </div>
 
       </div>
 
