@@ -6,24 +6,51 @@ import { ReactComponent as ExpandLessIcon } from './icons/expand_less.svg';
 
 const UserList = () => {
     const [expandedUserId, setExpandedUserId] = useState(null);
+    const [sortOption, setSortOption] = useState('');
 
     const handleCardClick = (userId) => {
         setExpandedUserId(userId === expandedUserId ? null : userId);
     }
 
-    return (
+    const handleSortOptionChange = (event) => {
+        setSortOption(event.target.value);
+      };
+    
+      const sortUsers = (users) => {
+        if (sortOption === 'name') {
+          return users.slice().sort((a, b) => a.firstName.localeCompare(b.firstName));
+        } else if (sortOption === 'id') {
+          return users.slice().sort((a, b) => a.id - b.id);
+        } else if (sortOption === 'role') {
+          return users.slice().sort((a, b) => a.role.localeCompare(b.role));
+        } else {
+          return users;
+        }
+      };
+    
+
+      return (
         <div>
-            {usersData.map((user) => (
-                <UserCard
-                    key={user.id}
-                    user={user}
-                    expanded={user.id === expandedUserId}
-                    onCardClick={handleCardClick}
-                />
-            ))}
+         
+         <div style={{ marginLeft: '12px', marginTop: '16px' }}>
+            <select value={sortOption} onChange={handleSortOptionChange}>
+              <option value="">Sort by</option>
+              <option value="name">Name</option>
+              <option value="id">ID</option>
+              <option value="role">Role</option>
+            </select>
+          </div>
+          {sortUsers(usersData).map((user) => (
+            <UserCard
+              key={user.id}
+              user={user}
+              expanded={user.id === expandedUserId}
+              onCardClick={handleCardClick}
+            />
+          ))}
         </div>
-    );
-};
+      );
+    };
 
 const UserCard = ({user, expanded, onCardClick}) => {
     const {id, firstName, lastName, role, email, street, city, state, zip, phone, createdAt, lastLoggedIn} = user;
@@ -111,7 +138,6 @@ return (
         </div>
 
       </div>
-
 
   
     </>
