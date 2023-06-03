@@ -8,5 +8,6 @@ reveal more information about the user.
 
 Output screenshot
 
-![output](https://github.com/DeepikaAnkam/veryable/assets/125697325/c8c56983-c691-42bc-adee-10f0f7b837bc)
+![Screenshot (37)](https://github.com/DeepikaAnkam/veryable/assets/125697325/f6aaed54-ba78-46f9-b7d7-3bc05a0e5ca7)
+
 
