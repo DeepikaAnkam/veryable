@@ -45,6 +45,13 @@ const UserCard = ({user, expanded, onCardClick}) => {
         }
     }
 
+    function getFormattedDate(date) {
+        let year = date.getFullYear();
+        let month = (1 + date.getMonth()).toString().padStart(2, '0');
+        let day = date.getDate().toString().padStart(2, '0');
+
+        return month + '/' + day + '/' + year + ' ' + date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds() + ' ' + (date.getHours() >= 12 ? 'PM' : 'AM');
+    }
 
 
 return (
@@ -88,6 +95,14 @@ return (
             <p>
                 <div style={{fontSize: '10px', fontWeight: 'bold'}}>Address</div>
                 <div style={{fontSize: '10px'}}>{`${street}, ${city}, ${state}, ${zip}`}</div>
+            </p>
+            <p>
+                <div style={{fontSize: '10px', fontWeight: 'bold'}}>Phone</div>
+                <div style={{fontSize: '10px'}}>{`${phone}`}</div>
+            </p>
+            <p>
+                <div style={{fontSize: '10px', fontWeight: 'bold'}}>Created At</div>
+                
             </p>
         </div>
 
