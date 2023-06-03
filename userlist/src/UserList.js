@@ -78,6 +78,14 @@ return (
           }
         </div>
       </div>
+      <div style={{
+        display: expanded ? 'flex' : 'none' , backgroundColor: '#FFFFFF',
+        margin: expanded ? '0 12px 16px 12px' : '16px 12px 16px 12px',
+        height: '190px',
+        alignItems: 'center'
+      }}>
+
+      </div>
 
 
   
